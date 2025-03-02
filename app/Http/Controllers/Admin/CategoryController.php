@@ -56,11 +56,4 @@ class CategoryController extends Controller
         return redirect()->route('admin.categories.index')->with('message','دسته بندی با موفقیت ویرایش شد');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Category $category)
-    {
-        //
-    }
 }
