@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\PanelController;
 use App\Http\Controllers\Admin\SliderController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,6 +24,14 @@ Route::prefix('admin')->group(function (){
        Route::get('/edit/{slider}',[SliderController::class,'edit'])->name('admin.sliders.edit');
        Route::put('/update/{slider}',[SliderController::class,'update'])->name('admin.sliders.update');
        Route::delete('/delete/{slider}',[SliderController::class,'delete'])->name('admin.sliders.delete');
+   });
+   Route::prefix('users')->group(function(){
+       Route::get('/',[UserController::class,'index'])->name('admin.users.index');
+       Route::get('/create',[UserController::class,'create'])->name('admin.users.create');
+       Route::post('/store',[UserController::class,'store'])->name('admin.users.store');
+       Route::get('/edit/{user}',[UserController::class,'edit'])->name('admin.users.edit');
+       Route::put('/update/{user}',[UserController::class,'update'])->name('admin.users.update');
+       Route::delete('/delete/{user}',[UserController::class,'delete'])->name('admin.users.delete');
    });
 });
 
