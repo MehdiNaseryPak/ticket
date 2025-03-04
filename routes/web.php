@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\PanelController;
+use App\Http\Controllers\Admin\PositionController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ProfileController;
@@ -32,6 +33,14 @@ Route::prefix('admin')->group(function (){
        Route::get('/edit/{user}',[UserController::class,'edit'])->name('admin.users.edit');
        Route::put('/update/{user}',[UserController::class,'update'])->name('admin.users.update');
        Route::delete('/delete/{user}',[UserController::class,'delete'])->name('admin.users.delete');
+   });
+   Route::prefix('positions')->group(function(){
+       Route::get('/',[PositionController::class,'index'])->name('admin.positions.index');
+       Route::get('/create',[PositionController::class,'create'])->name('admin.positions.create');
+       Route::post('/store',[PositionController::class,'store'])->name('admin.positions.store');
+       Route::get('/edit/{position}',[PositionController::class,'edit'])->name('admin.positions.edit');
+       Route::put('/update/{position}',[PositionController::class,'update'])->name('admin.positions.update');
+       Route::delete('/delete/{position}',[PositionController::class,'delete'])->name('admin.positions.delete');
    });
 });
 
