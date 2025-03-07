@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\MovieController;
 use App\Http\Controllers\Admin\PanelController;
 use App\Http\Controllers\Admin\PositionController;
 use App\Http\Controllers\Admin\SliderController;
@@ -41,6 +42,14 @@ Route::prefix('admin')->group(function (){
        Route::get('/edit/{position}',[PositionController::class,'edit'])->name('admin.positions.edit');
        Route::put('/update/{position}',[PositionController::class,'update'])->name('admin.positions.update');
        Route::delete('/delete/{position}',[PositionController::class,'delete'])->name('admin.positions.delete');
+   });
+   Route::prefix('movies')->group(function(){
+       Route::get('/',[MovieController::class,'index'])->name('admin.movies.index');
+       Route::get('/create',[MovieController::class,'create'])->name('admin.movies.create');
+       Route::post('/store',[MovieController::class,'store'])->name('admin.movies.store');
+       Route::get('/edit/{movie}',[MovieController::class,'edit'])->name('admin.movies.edit');
+       Route::put('/update/{movie}',[MovieController::class,'update'])->name('admin.movies.update');
+       Route::delete('/delete/{movie}',[MovieController::class,'delete'])->name('admin.movies.delete');
    });
 });
 

@@ -37,6 +37,14 @@ return [
             'throw' => false,
             'report' => false,
         ],
+        'video' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/trailers'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+            'throw' => false,
+            'report' => false,
+        ],
         'private' => [
             'driver' => 'local',
             'root' => storage_path('app/private'),
