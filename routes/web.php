@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\ActorController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\MovieActorController;
 use App\Http\Controllers\Admin\MovieController;
 use App\Http\Controllers\Admin\MovieGalleryController;
 use App\Http\Controllers\Admin\PanelController;
@@ -64,6 +65,11 @@ Route::prefix('admin')->group(function (){
            Route::get('/{movie}',[MovieGalleryController::class,'index'])->name('admin.movies.gallery.index');
            Route::get('/create/{movie}',[MovieGalleryController::class,'create'])->name('admin.movies.gallery.create');
            Route::post('/store/{movie}',[MovieGalleryController::class,'store'])->name('admin.movies.gallery.store');
+       });
+       Route::prefix('actors')->group(function(){
+           Route::get('/{movie}',[MovieActorController::class,'index'])->name('admin.movies.actor.index');
+           Route::get('/create/{movie}',[MovieActorController::class,'create'])->name('admin.movies.actor.create');
+           Route::post('/store/{movie}',[MovieActorController::class,'store'])->name('admin.movies.actor.store');
        });
    });
 });

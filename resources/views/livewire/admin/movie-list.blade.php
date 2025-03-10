@@ -15,6 +15,8 @@
             <th class="text-center align-middle text-primary">کارگردان</th>
             <th class="text-center align-middle text-primary"> کامنت گذاری</th>
             <th class="text-center align-middle text-primary"> وضعیت</th>
+            <th class="text-center align-middle text-primary">گالری</th>
+            <th class="text-center align-middle text-primary">بازیگران</th>
             <th class="text-center align-middle text-primary">ویرایش</th>
             <th class="text-center align-middle text-primary">حذف</th>
             <th class="text-center align-middle text-primary">تاریخ ایجاد</th>
@@ -43,10 +45,21 @@
                     @endif
                 </td>
                 <td class="text-center align-middle">
+                    <a class="btn btn-outline-success"  href="{{ route('admin.movies.gallery.create',$movie->id) }}">
+                        گالری
+                    </a>
+                </td>
+                <td class="text-center align-middle">
+                    <a class="btn btn-outline-warning"  href="{{ route('admin.movies.edit',$movie->id) }}">
+                        بازیگران
+                    </a>
+                </td>
+                <td class="text-center align-middle">
                     <a class="btn btn-outline-info" href="{{ route('admin.movies.edit',$movie->id) }}">
                         ویرایش
                     </a>
                 </td>
+
                 <td class="text-center align-middle">
                     <button class="btn btn-outline-danger"  wire:click="deleteConfirm({{ $movie->id }})">
                         حذف
