@@ -26,6 +26,11 @@
                     <i class="icon ti-user"></i>
                 </a>
             </li>
+            <li data-toggle="tooltip" title="بازیگران">
+                <a href="#actors" title="بازیگران">
+                    <i class="icon ti-user"></i>
+                </a>
+            </li>
         </ul>
         <ul>
             <li data-toggle="tooltip" title="ویرایش پروفایل">
@@ -72,8 +77,8 @@
             <li>
                 <a href="#">فیلم</a>
                 <ul>
-                    <li><a href="#">ایجاد فیلم</a></li>
-                    <li><a href="#">لیست فیلم ها</a></li>
+                    <li><a href="{{ route('admin.movies.create') }}">ایجاد فیلم</a></li>
+                    <li><a href="{{ route('admin.movies.index') }}">لیست فیلم ها</a></li>
                 </ul>
             </li>
         </ul>
@@ -83,6 +88,15 @@
                 <ul>
                     <li><a href="{{ route('admin.users.create') }}">ایجاد کاربر</a></li>
                     <li><a href="{{ route('admin.users.index') }}">لیست کاربران</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul id="actors">
+            <li>
+                <a href="#">بازیگران</a>
+                <ul>
+                    <li><a href="{{ route('admin.actors.create') }}">ایجاد بازیگر</a></li>
+                    <li><a href="{{ route('admin.actors.index') }}">لیست بازیگران</a></li>
                 </ul>
             </li>
         </ul>

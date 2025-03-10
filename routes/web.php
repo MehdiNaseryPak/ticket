@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ActorController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\MovieController;
 use App\Http\Controllers\Admin\MovieGalleryController;
@@ -35,6 +36,14 @@ Route::prefix('admin')->group(function (){
        Route::get('/edit/{user}',[UserController::class,'edit'])->name('admin.users.edit');
        Route::put('/update/{user}',[UserController::class,'update'])->name('admin.users.update');
        Route::delete('/delete/{user}',[UserController::class,'delete'])->name('admin.users.delete');
+   });
+   Route::prefix('actors')->group(function(){
+       Route::get('/',[ActorController::class,'index'])->name('admin.actors.index');
+       Route::get('/create',[ActorController::class,'create'])->name('admin.actors.create');
+       Route::post('/store',[ActorController::class,'store'])->name('admin.actors.store');
+       Route::get('/edit/{actor}',[ActorController::class,'edit'])->name('admin.actors.edit');
+       Route::put('/update/{actor}',[ActorController::class,'update'])->name('admin.actors.update');
+       Route::delete('/delete/{actor}',[ActorController::class,'delete'])->name('admin.actors.delete');
    });
    Route::prefix('positions')->group(function(){
        Route::get('/',[PositionController::class,'index'])->name('admin.positions.index');
