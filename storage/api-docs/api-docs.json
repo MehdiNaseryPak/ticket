@@ -1,0 +1,86 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Ticket Api",
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/v1/": {},
+        "/api/v1/send_sms": {
+            "post": {
+                "tags": [
+                    "Auth Api"
+                ],
+                "description": "use for send verification sms to user",
+                "operationId": "d66c863c38e88d858c0ed44f85519d62",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "id": {
+                                        "description": "Enter mobile number or Email Address",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Its Ok",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/login_or_register": {
+            "post": {
+                "tags": [
+                    "Auth Api"
+                ],
+                "description": "verify code and login or register",
+                "operationId": "6c46035bd8b7e1fc8b2b1dae463b6ca2",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "id": {
+                                        "description": "Enter mobile number or Email Address",
+                                        "type": "string"
+                                    },
+                                    "code": {
+                                        "description": "Enter send code",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Its Ok",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Auth Api",
+            "description": "Auth Api"
+        }
+    ]
+}

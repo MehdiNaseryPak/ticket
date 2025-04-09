@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\PanelController;
 use App\Http\Controllers\Admin\PositionController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Api\V1\AuthController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -73,6 +74,7 @@ Route::prefix('admin')->group(function (){
        });
    });
 });
+
 
 
 
